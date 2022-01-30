@@ -1,4 +1,4 @@
-# CS6675 HW1 - Web Crawler
+# SPRING 2022 Georgia Tech | CS 6675 | HW1 | Web Crawler
 
 ## Files:
 - scrape.py: Web crawler written using [Scrapy](https://docs.scrapy.org/en/latest/)
@@ -43,7 +43,6 @@
     ```
 
 
-
 ## Usage
 
 1. Set max links variable in `scrape.py`
@@ -51,7 +50,12 @@
     ```
     python3 -m scrapy runspider scrape.py 
     ```
+2. Note relevant metric into data_.json files. To plot use
+    ```
+    python3 plot.py
+    ```
 
 ## References
 - https://github.com/pjcalvo/pjcalvo.github.io/blob/master/samples/web-crawler/script.py
 - https://docs.python.org/3/library/sqlite3.html
+- https://www.educative.io/edpresso/how-to-plot-graphs-using-json-files-in-python

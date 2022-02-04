@@ -10,7 +10,7 @@ import sqlite3
 
 class MySpider(CrawlSpider):
     name = "test-crawler"
-    max_links = 20
+    max_links = 5000
     target_domains = ["gatech.edu"] # list of domains that will be allowed to be crawled
     start_urls = ["https://cc.gatech.edu/"] # list of starting urls for the crawler
     handle_httpstatus_list = [404,410,301,500] # only 200 by default. you can add more status to list
@@ -45,7 +45,13 @@ class MySpider(CrawlSpider):
         # tokenize into list
         res = list(map(str.split, res_list))
         # remove stop words
-        filtered_words = [word for word in res if word not in stopwords.words('english')]
+        stop_words = set(stopwords.words('english'))
+        filtered_words = []
+        for l in res:
+            for word in l:
+                if word.lower() not in stop_words:
+                    filtered_words.append(word)
+        # print(filtered_words)
         self.crawler.stats.inc_value('keywords', len(filtered_words))
 
         cur = self.con.cursor()

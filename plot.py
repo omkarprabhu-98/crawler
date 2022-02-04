@@ -47,7 +47,7 @@ plt.show()
 
 # Pages per minute
 xAxis = [ 50, 100, 500, 1000, 5000]
-yAxis = [ sub['visited'] / sub['elapsed_time_seconds'] for sub in l ]
+yAxis = [ sub['visited'] * 60 / sub['elapsed_time_seconds'] for sub in l ]
 plt.grid(True)
 plt.plot(xAxis,yAxis, color='maroon', marker='o')
 plt.xlabel('No. of links')

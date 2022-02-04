@@ -3,7 +3,7 @@
 ## Files:
 - scrape.py: Web crawler written using [Scrapy](https://docs.scrapy.org/en/latest/)
 - data_< i >.json: relevant metric pulled from the crawler for < i > no. of links
-- colly_crawler: 
+<!-- - colly_crawler:  -->
 
 ## Installation
 1. Install Rust for cryptography package required by Scrapy
